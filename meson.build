@@ -154,6 +154,10 @@ elif host_machine.system() == 'dripos'
 	rtdl_include_dirs += include_directories('sysdeps/dripos/include')
 	libc_include_dirs += include_directories('sysdeps/dripos/include')
 	subdir('sysdeps/dripos')
+elif host_machine.system() == 'rook'
+	rtdl_include_dirs += include_directories('sysdeps/rook/include')
+	libc_include_dirs += include_directories('sysdeps/rook/include')
+	subdir('sysdeps/rook')
 else
 	error('No sysdeps defined for OS: ' + host_machine.system())
 endif
@@ -352,7 +356,7 @@ if not headers_only
 	if library_type in ['static', 'both']
 		static_cpp_args = [
 			'-DMLIBC_STATIC_BUILD',
-			'-DFRIGG_HAVE_LIBC',
+			'-DFRIGG_HAVE_LIBC'
 		]
 		ld_static_lib = static_library('ld', rtdl_sources,
 			name_prefix: '',
