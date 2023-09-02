@@ -24,3 +24,4 @@
 #define SYS_LOG 21
 #define SYS_ARCH_CTL 22
 #define SYS_GETTIMEOFDAY 23
+#define SYS_PSELECT 24
